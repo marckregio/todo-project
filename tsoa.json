@@ -1,0 +1,20 @@
+{
+  "entryFile": "index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "spec": {
+    "outputDirectory": "public",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "controllerPathGlobs": ["./src/controllers/*.controller.ts"],
+  "routes": {
+    "authenticationModule": "./src/services/auth.service.ts",
+    "routesDir": "./src/routes"
+  }
+}
