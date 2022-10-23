@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import { RegisterRoutes } from "./src/routes/routes";
 import { initializeDatabase } from "./src/entities";
+import { start } from "./src/services/promises.services";
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -39,7 +40,9 @@ app.get("/", (req: express.Request, res: express.Response) => {
 });
 
 server.listen(port, () => {
-	new RegisterRoutes(app);
+	//new RegisterRoutes(app);
 
-  initializeDatabase();
+  //initializeDatabase();
+
+  start();
 });
